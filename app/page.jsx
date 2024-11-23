@@ -1,3 +1,5 @@
+import SearchForm from "@/app/(components)/SearchForm";
+
 export default function Home() {
   return (
     <div className="flex flex-col md:items-center mt-14">
@@ -10,6 +12,9 @@ export default function Home() {
           range of topics and engage in lively discussions by sharing their
           opinions.
         </p>
+        <div className="w-full text-center">
+          <SearchForm />
+        </div>
       </div>
     </div>
   );

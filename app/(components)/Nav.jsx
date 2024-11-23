@@ -8,10 +8,10 @@ async function Nav() {
   const session = await getServerSession(options);
 
   return (
-    <header className="py-4">
+    <header className="py-4 container">
       <nav className="flex justify-between items-center">
         <Link href="/" className="text-2xl sour-gummy">Opinion Hub</Link>
-        {session ? (
+        {session?.user ? (
           <ul className="list-none flex gap-6">
             <li>
               <Link
@@ -29,6 +29,11 @@ async function Nav() {
                 Sign Out
               </Link>
             </li>
+              <li>
+                  <Link href={`/user/${session?.user.id}`}>
+                      <Image src={session?.user?.picture} alt="profile image" width={30} height={30} />
+                  </Link>
+              </li>
           </ul>
         ) : (
           <ul className="list-none flex gap-6">
